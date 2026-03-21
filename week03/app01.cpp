@@ -1,43 +1,7 @@
 #include <iostream>
+#include "pokemon.h"
 using namespace std;
 
-class Pokemon
-{
-private:
-    int level;
-    int hp;
-    static int count;
-public:
-    Pokemon();
-    Pokemon(int level, int hp);
-    Pokemon(const Pokemon& pokemon);
-    ~Pokemon();    
-    static int getCount();
-    int getHp() const {  // inline
-        return hp;
-    }
-};
-int Pokemon::count = 0;
-Pokemon::Pokemon() : level(1), hp(10)
-{
-    count++;
-}
-Pokemon::Pokemon(int level, int hp) : level(level), hp(hp)
-{
-    count++;
-}
-Pokemon::Pokemon(const Pokemon& pokemon) : level(pokemon.level), hp(pokemon.hp)
-{
-    count++;
-}
-Pokemon::~Pokemon()
-{
-    count--;
-}
-int Pokemon::getCount()
-{
-    return count;
-}
 Pokemon pokemon6;  // static memory (data memory)
 
 void test() {
