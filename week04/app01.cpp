@@ -2,12 +2,13 @@
 
 Pokemon pokemon6;  // static memory (data memory)
 
-void test() {
+Pokemon* test() {
     Pokemon pokemon7(pokemon6);
     Pokemon* pokemon8 = new Pokemon(50, 20000);
 
     cout << "포켓몬 객체의 수: " << pokemon7.getCount() << endl;
-    delete pokemon8;
+    //delete pokemon8;
+    return pokemon8;
 }
 
 int main()
@@ -18,14 +19,17 @@ int main()
         cout << pokemon1.getHp() << endl;
         Pokemon pokemon2(5, 300);
 
-        test();
+        Pokemon* pokemon9 = test();
         cout << "포켓몬 객체의 수: " << Pokemon::getCount() << endl;
 
         Pokemon pokemon3;
         Pokemon pokemon4(pokemon1);
         Pokemon pokemon5(pokemon2);
         cout << "포켓몬 객체의 수: " << pokemon5.getCount() << endl;
+        cout << pokemon9->getHp() << '\n';
+        delete pokemon9;
+        cout << "포켓몬 객체의 수: " << pokemon5.getCount() << endl;
     }
-    cout << "포켓몬 객체의 수: " << Pokemon::getCount();
+    cout << "포켓몬 객체의 수: " << Pokemon::getCount() << endl;
     return 0;
 }
