@@ -24,5 +24,16 @@ int main()
         }
         cout << '\n';
     }
+
+    // delete X
+    // delete matrix;
+    // delete[] matrix;
+    for (int i = 0; i < rows; i++) {
+        delete[] matrix[i];
+        matrix[i] = nullptr;
+    }
+    delete[] matrix;
+    matrix = nullptr;
+
     return 0;
 }
