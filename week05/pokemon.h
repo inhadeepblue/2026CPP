@@ -13,4 +13,6 @@ public:
     int getLevel() const;
     void setHp(int hp);
     int getHp() const;
+    void attack();
+    void attack(int attackPoint);
 };
