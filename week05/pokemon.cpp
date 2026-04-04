@@ -1,5 +1,19 @@
 #include "pokemon.h"
 
+Pokemon::Pokemon() : level(1), hp(10)
+{    
+}
+
+Pokemon::Pokemon(int level, int hp)
+    :level(level), hp(hp)
+{
+}
+
+Pokemon::Pokemon(const Pokemon& pokemon)
+    :level(pokemon.level), hp(pokemon.hp)
+{
+}
+
 void Pokemon::set(int level, int hp)
 {
     this->level = level;
