@@ -9,9 +9,8 @@ private:
     int level;
     int hp;
 public:
-    void setLevel(int level);
+    void set(int level, int hp);
     int getLevel() const;
-    void setHp(int hp);
     int getHp() const;
     void attack();
     void attack(int attackPoint);

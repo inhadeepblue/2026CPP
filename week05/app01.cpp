@@ -4,17 +4,16 @@
 int main()
 {
     Pokemon pokemon;
-    pokemon.setLevel(1);
+    pokemon.set(1, 5);
     cout << "포켓몬 레벨 : " << pokemon.getLevel();
     cout << endl << endl;
 
     Pikachu pikachu;
-    pikachu.setLevel(20);
+    pikachu.set(20, 200, "전기");
     pikachu.electricAttack(100000);
     cout << "포켓몬 레벨 : " << pikachu.getLevel() << endl;
     pikachu.attack();
     //pikachu.attack(50);
-    pikachu.setType("전기");
     cout << pikachu.getType() << '\n';
     
     return 0;

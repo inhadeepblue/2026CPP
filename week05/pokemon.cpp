@@ -1,18 +1,14 @@
 #include "pokemon.h"
 
-void Pokemon::setLevel(int level)
+void Pokemon::set(int level, int hp)
 {
     this->level = level;
+    (*this).hp = hp;
 }
 
 int Pokemon::getLevel() const
 {
     return level;
-}
-
-void Pokemon::setHp(int hp)
-{
-    this->hp = hp;
 }
 
 int Pokemon::getHp() const

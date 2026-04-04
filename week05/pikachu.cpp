@@ -8,8 +8,9 @@ void Pikachu::attack() {
     cout << "전기 일반 공격\n";
 }
 
-void Pikachu::setType(string type)
+void Pikachu::set(int level, int hp, string type)
 {
+    Pokemon::set(level, hp); // delegation
     this->type = type;
 }
 

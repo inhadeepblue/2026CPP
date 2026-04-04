@@ -7,6 +7,6 @@ private:
 public:
     void electricAttack(double gpa);
     void attack();
-    void setType(string type);
+    void set(int level, int hp, string type);
     string getType() const;
 };
