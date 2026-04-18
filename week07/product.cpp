@@ -1,4 +1,5 @@
 ﻿#include "product.h"
+#include "company.h"
 
 Product::Product(string name, int unitPrice)
 : name(name), unitPrice(unitPrice)
