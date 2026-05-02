@@ -27,14 +27,14 @@ int main()
 	Animal* animal = new Dog();  // upcast
 	animal->makeSound();
 
-	Cat* cat = (Cat*)animal; // downcast, old style (c style)
-	//Dog* dog = dynamic_cast<Dog*>(animal); // downcast, modern style (c++ 11)
-	//dog->makeSound();
-	cat->makeSound();
-	
+	//Cat* cat = (Cat*)animal; // downcast, old style (c style)  // danger
+	Cat* cat = dynamic_cast<Cat*>(animal); // downcast, modern style (c++ 11)
 	cout << animal << '\n';
 	cout << cat << '\n';
 
+	//dog->makeSound();
+	cat->makeSound();
+	
 	delete animal;
 	animal = nullptr;
 
