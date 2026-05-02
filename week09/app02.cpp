@@ -26,6 +26,11 @@ int main()
 {
 	Animal* animal = new Dog();  // upcast
 	animal->makeSound();
+
+	//Dog* dog = (Dog*)animal; // downcast, old style (c style)
+	Dog* dog = dynamic_cast<Dog*>(animal); // downcast, modern style (c++ 11)
+	dog->makeSound();
+
 	delete animal;
 	animal = nullptr;
 
