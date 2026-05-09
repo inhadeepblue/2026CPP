@@ -3,22 +3,20 @@
 #include <cstring>
 using namespace std;
 
+int myStrlen(char* ps) {
+	int i = 0;
+
+	while (ps[i] != NULL) {
+		i++;
+	}
+	return i;
+}
 int main()
 {
-	//char a[] = { 'A', 'C', 'E', '\0' };	
-	//char a[] = { 'A', 'C', 'E'};
-	char a[] = { 'A', 0, 'C', 'E'};
-	//char a[] = { 'A', 'C', 'E', NULL};
-	//char a[] = { 'A', 'C', 'E', 0 };
-	//char a[] = "ACE";
-	//const char a[] = "ACE";
-	//char* b = "XYZ";
-	const char* b = "XYZ";
-
+	char a[] = "ACE";
 	cout << a << '\n';
-	//a[0] = 'X';
-	//cout << a << '\n';
-	//b[0] = 'K';
+	cout << strlen(a) << '\n';
+	cout << myStrlen(a) << '\n';
 
 	return 0;
 }
