@@ -7,16 +7,14 @@ public:
 	int id = 1;
 };
 
-class UndergraduateStudent : public Student{ 
+class UndergraduateStudent : virtual public Student{ 
 public:
-	int id = 2;
 	void warn() {
 		cout << "학사경고\n";
 	}
 };
-class DormitoryStudent : public Student {
+class DormitoryStudent : virtual public Student {
 public:
-	int id = 3;
 	void warn() {
 		cout << "벌점부여\n";
 	}
@@ -29,7 +27,7 @@ public:
 	void test() {
 		cout << DormitoryStudent::id << '\n';
 		cout << UndergraduateStudent::id << '\n';
-		//cout << id << '\n';  // ambiguous 
+		cout << id << '\n';
 	}
 };
 int main()
