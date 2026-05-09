@@ -5,12 +5,17 @@ using namespace std;
 
 int main()
 {
-	char a[] = "ACE";
-	char b[] = "ACE";
-	string c = "ACE";
-	string d = "ACE";
-	cout << strcmp(a, b) << '\n';	
-	cout << (c == d) << '\n';
+	//string a = "ACE";
+	string a("ACE");
+	cout << a.size() << '\n';
+	cout << a.capacity() << '\n';
+	a = "12345";
+	cout << a.size() << '\n';
+	cout << a.capacity() << '\n';
+	a = "1234567890123456";
+	cout << a.size() << '\n';
+	cout << a.capacity() << '\n';
+
 
 	return 0;
 }
