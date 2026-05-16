@@ -25,6 +25,10 @@ public:
         this->real = this->real + 1;
         return backup;
     }
+    Complex operator++() {  // prefix        
+        this->real = this->real + 1;
+        return Complex(this->real, this->imaginary);
+    }
 };
 Complex operator+(const Complex& left, const Complex& right) {
     int r = left.getReal() + right.getReal();
@@ -38,7 +42,7 @@ int main()
     Complex c3 = operator+(c1, c2); //Complex c3 = c1 + c2;
     cout << c3.getReal() << '\n';
     cout << c3.getImaginary() << '\n';
-    Complex c4 = c3++;
+    Complex c4 = ++c3;
     cout << c4.getReal() << '\n';
     cout << c4.getImaginary() << '\n';
     cout << c3.getReal() << '\n';
