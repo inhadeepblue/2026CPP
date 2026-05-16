@@ -35,17 +35,15 @@ Complex operator+(const Complex& left, const Complex& right) {
     int i = left.getImaginary() + right.getImaginary();
     return Complex(r, i);
 }
+ostream& operator<<(ostream& o, const Complex& right) {
+    o << right.getReal() << "+" << right.getImaginary() << "i\n";
+    return o;
+}
 int main()
 {  
     Complex c1(9, 2), c2(3, 5);
-    cout << c2.getImaginary() << '\n';
-    Complex c3 = operator+(c1, c2); //Complex c3 = c1 + c2;
-    cout << c3.getReal() << '\n';
-    cout << c3.getImaginary() << '\n';
-    Complex c4 = ++c3;
-    cout << c4.getReal() << '\n';
-    cout << c4.getImaginary() << '\n';
-    cout << c3.getReal() << '\n';
+    cout << c2.getReal() << "+" << c2.getImaginary() << "i\n";
+    cout << c2 << '\n';
 
     return 0;
 }
