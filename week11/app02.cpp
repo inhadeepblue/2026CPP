@@ -15,12 +15,17 @@ public:
     int getImaginary() const {
         return imaginary;
     }
-    Complex operator+(const Complex& right) {
-        int r = this->real + right.real;
-        int i = this->imaginary + right.imaginary;
-        return Complex(r, i);
-    }
+    //Complex operator+(const Complex& right) {
+    //    int r = this->real + right.real;
+    //    int i = this->imaginary + right.imaginary;
+    //    return Complex(r, i);
+    //}
 };
+Complex operator+(const Complex& left, const Complex& right) {
+    int r = left.getReal() + right.getReal();
+    int i = left.getImaginary() + right.getImaginary();
+    return Complex(r, i);
+}
 int main()
 {  
     Complex c1(9, 2), c2(3, 5);
