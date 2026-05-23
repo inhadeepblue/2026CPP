@@ -46,7 +46,10 @@ Complex operator+(const Complex& left, const Complex& right) {
     return Complex(r, i);
 }
 ostream& operator<<(ostream& o, const Complex& right) {
-    o << right.getReal() << "+" << right.getImaginary() << "i\n";
+    if(right.getImaginary() >= 0)
+        o << right.getReal() << "+" << right.getImaginary() << "i\n";
+    else
+        o << right.getReal() << right.getImaginary() << "i\n";
     return o;
 }
 istream& operator>>(istream& i, Complex& right) {
