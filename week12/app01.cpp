@@ -65,8 +65,8 @@ istream& operator>>(istream& i, Complex& right) {
 int main()
 {
     Complex c1;
-    cin >> c1;
-    cout << c1;
+    operator>>(cin, c1);  //cin >> c1;
+    operator<<(cout, c1);  // cout << c1;
 
     return 0;
 }
