@@ -4,19 +4,22 @@ using namespace std;
 
 class Complex {
 private:
-    //mutable int real;
     int real;
     int imaginary;
 public:
     friend Complex operator+(const Complex& left, const Complex& right);
 
+    Complex() : real(0), imaginary(0) {
+    }
     Complex(int real, int imaginary) : real(real), imaginary(imaginary) {
     }
     void setReal(int real) {
         this->real = real;
     }
+    void setImaginary(int imaginary) {
+        this->imaginary = imaginary;
+    }
     int getReal() const {
-        //real = 11;  // private
         return real;
     }
     int getImaginary() const {
@@ -46,18 +49,21 @@ ostream& operator<<(ostream& o, const Complex& right) {
     o << right.getReal() << "+" << right.getImaginary() << "i\n";
     return o;
 }
+istream& operator>>(istream& i, Complex& right) {
+    int real, imaginary;
+    cout << "Input Real Number : ";
+    cin >> real;
+    cout << "Input Imaginary Number : ";
+    cin >> imaginary;
+    right.setReal(real);
+    right.setImaginary(imaginary);
+    return i;
+}
 int main()
 {
-    Complex c1(9, 2), c2(3, 5);
-    cout << c2.getReal() << "+" << c2.getImaginary() << "i\n";
-    cout << c2 << '\n';
-    c1.setReal(77);  // ok
-    Complex c3 = c1 + c2;  // operator+
-    cout << c3 << '\n';
-    const Complex c4(3, 7);
-    cout << c4 << '\n';
-    cout << c4.getImaginary() << '\n';
-    // c4.setReal(111); 
+    Complex c1;
+    cin >> c1;
+    cout << c1;
 
     return 0;
 }
