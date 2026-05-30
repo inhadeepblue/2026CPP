@@ -14,6 +14,10 @@ int main()
     catch (int err) {
         cout << "에러코드: " << err <<"\n";
     }
+    //catch (string err) {
+    catch (const char* err) {
+        cout << err << "\n";
+    }
 
 
     return 0;

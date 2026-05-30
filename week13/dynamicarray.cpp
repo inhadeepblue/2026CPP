@@ -18,7 +18,7 @@ DynamicArray::~DynamicArray()
 void DynamicArray::setAt(int index, int value)
 {
 	if (index >= size || index < 0) {
-		throw 4885;
+		throw "4885 : 할당에러";
 	}
 	ptr[index] = value;
 }
@@ -26,7 +26,7 @@ void DynamicArray::setAt(int index, int value)
 int DynamicArray::getAt(int index) const
 {
 	if (index >= size || index < 0) {
-		throw 1002;
+		throw "1002 : 접근에러";
 	}
 	return ptr[index];
 }
