@@ -10,6 +10,6 @@ public:
 	DynamicArray(int size);
 	~DynamicArray();
 
-	bool setAt(int index, int value);
+	void setAt(int index, int value);
 	int getAt(int index) const;
 };
