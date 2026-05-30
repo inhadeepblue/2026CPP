@@ -15,9 +15,13 @@ DynamicArray::~DynamicArray()
 	delete[] ptr;
 }
 
-void DynamicArray::setAt(int index, int value)
+bool DynamicArray::setAt(int index, int value)
 {
-	ptr[index] = value;
+	if (index < size && index >= 0) {
+		ptr[index] = value;
+		return 1;
+	}
+	return 0;
 }
 
 int DynamicArray::getAt(int index) const
