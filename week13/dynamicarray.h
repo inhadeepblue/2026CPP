@@ -9,4 +9,7 @@ public:
 	DynamicArray();
 	DynamicArray(int size);
 	~DynamicArray();
+
+	void setAt(int index, int value);
+	int getAt(int index) const;
 };
