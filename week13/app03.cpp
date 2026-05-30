@@ -2,19 +2,18 @@
 using namespace std;
 
 template <typename T>
-void exchange(T* first, T* second)
+T bigger(T first, T second)
 {
-	T temp = *first;
-	*first = *second;
-	*second = temp;
+	if (first > second)
+		return first;
+	return second;
 }
 int main()
 {
 	int i1 = 1, i2 = 2;
-	double d3 = 3, d4 = 4;
-	exchange(&i1, &i2);
-	cout << i1 << "  " << i2 << endl;
-	exchange(&d3, &d4);	
-	cout << d3 << "  " << d4 << endl;
+	double d3 = 3.7;	
+	cout << bigger(i1, i2) << endl;
+	//cout << bigger(i2, d3) << endl;
+	cout << bigger<int>(i2, d3) << endl;  // 2.0
 	return 0;
 }
