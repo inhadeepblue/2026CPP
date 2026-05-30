@@ -1,4 +1,5 @@
 #include "dynamicarray.h"
+#include "myexception.h"
 
 DynamicArray::DynamicArray() : size(1)
 {
@@ -18,7 +19,8 @@ DynamicArray::~DynamicArray()
 void DynamicArray::setAt(int index, int value)
 {
 	if (index >= size || index < 0) {
-		throw "4885 : 할당에러";
+		//throw "4885 : 할당에러";
+		throw MyException(4885, "메모리 할당 오류", this);
 	}
 	ptr[index] = value;
 }
@@ -26,7 +28,8 @@ void DynamicArray::setAt(int index, int value)
 int DynamicArray::getAt(int index) const
 {
 	if (index >= size || index < 0) {
-		throw "1002 : 접근에러";
+		//throw "1002 : 접근에러";
+		throw MyException(1002, "메모리 접근 오류", this);
 	}
 	return ptr[index];
 }
