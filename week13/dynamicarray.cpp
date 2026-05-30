@@ -9,7 +9,7 @@ DynamicArray::DynamicArray(int size) : size(size)
 {
 	try {
 		ptr = new int[size];
-		throw MyException(9000, "객체 생성 오류", this);;  // 임의로 예외 발생
+		throw MyException(9000, "객체 생성 오류", this);  // 임의로 예외 발생
 	}
 	catch (...) {
 		delete[] ptr;  // 생성자 안쪽에서 이미 할당된 힙메모리 공간의 누수를 막음
