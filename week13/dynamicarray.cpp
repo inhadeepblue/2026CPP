@@ -25,6 +25,9 @@ void DynamicArray::setAt(int index, int value)
 
 int DynamicArray::getAt(int index) const
 {
+	if (index >= size || index < 0) {
+		throw 1002;
+	}
 	return ptr[index];
 }
 
